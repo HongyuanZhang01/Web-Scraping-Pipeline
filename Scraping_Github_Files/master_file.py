@@ -10,7 +10,7 @@ KEYWORD = "Uncanny Valley"
 SEARCH_QUERY = '(("uncanny valley" AND "mind") OR ("Alexa" AND "dehumanization") OR ("artificial intelligence" AND "eeriness"))'
 MAX_RESULTS = 5000
 EMAIL = "joseph.hyzhang@gmail.com"
-API_KEY = "AIzaSyCB5RmSm-6ZruWZfh4TtIG3WIlAgLrkh5c"
+API_KEY = "YOUR_GEMINI_API_KEY_HERE"
 
 # ==========================================
 #        WORKSPACE SETUP
@@ -125,5 +125,6 @@ if __name__ == "__main__":
         "--in_csv", csv_4, "--out_csv", csv_5, "--report", rep_5, 
         "--pdf_dir", DIR_PDFS, "--api", API_KEY
     ])
+
 
     log_and_print(f"\n🎉 PIPELINE FINISHED COMPLETELY! Data saved in {RUN_DIR}/")
