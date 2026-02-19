@@ -35,11 +35,13 @@ MODEL_NAME = "gemini-2.0-flash"
 MAX_WORKERS = 10  
 
 ANALYSIS_PROMPT = """
+Analyze this PDF research paper. The goal is to [YOUR GOAL HERE].
+1. Identify the [METRIC 1]. Choose ONE from: [Category A, Category B, Category C, Other].
+2. Provide a brief "Reason" (max 1 sentence).
 
-This prompt will be used to determine what you want extracted from the full-text PDFs. 
-Currently, a column titled "Methodology" will be generated in step 4. 
-You may change this in step 4 if you wish.
-
+Return the result as a valid JSON object with these keys:
+- "methodology": "The chosen category",
+- "reason": "The explanation"
 """
 
 # ==========================================
@@ -239,3 +241,4 @@ def run_fast_pipeline():
 if __name__ == "__main__":
 
     run_fast_pipeline()
+
