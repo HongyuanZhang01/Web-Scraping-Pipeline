@@ -22,8 +22,7 @@ pip install pyalex pandas requests thefuzz google-genai
 Before running the pipeline, you must configure your specific research parameters.
 
 1. **master_file.py**
-
-Open the orchestrator file and fill out the MASTER CONFIGURATION section at the top:
+  * Open the orchestrator file and fill out the MASTER CONFIGURATION section at the top:
 * **KEYWORD:** The name of your run (e.g., "Machine_Learning_Bias").
 * **SEARCH_QUERY:** Your boolean search string for OpenAlex.
 * **MAX_RESULTS:** The maximum number of papers to fetch.
@@ -31,12 +30,10 @@ Open the orchestrator file and fill out the MASTER CONFIGURATION section at the 
 * **API_KEY:** Your Google Gemini API Key.
 
 2. **step2_relevancy_filter.py**
-
-Locate the *SYSTEM_PROMPT* variable and update the INCLUSION CRITERIA to match the specific rules you want the AI to use when screening abstracts.
+  * Locate the *SYSTEM_PROMPT* variable and update the INCLUSION CRITERIA to match the specific rules you want the AI to use when screening abstracts.
 
 3. **step5_analysis.py**
-
-Locate the *ANALYSIS_PROMPT* variable and update the instructions. Tell the AI exactly what data points you want extracted from the full-text PDFs.
+  * Locate the *ANALYSIS_PROMPT* variable and update the instructions. Tell the AI exactly what data points you want extracted from the full-text PDFs.
 
 ## Usage
 Activate your virtual environment and run the master file:
