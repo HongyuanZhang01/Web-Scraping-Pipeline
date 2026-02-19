@@ -27,9 +27,22 @@ REQUIRE_DOI = False
 client = genai.Client(api_key=API_KEY)
 
 SYSTEM_PROMPT = """
+You are a strict research assistant conducting a systematic review.
+We are looking for papers on [YOUR TOPIC HERE].
 
-Enter your system prompt here! This will be used to determine the relevancy of each keyword-matched paper.
+INCLUSION CRITERIA (Must meet ALL):
+1. Topic: Explicitly discusses [CRITERIA 1].
+2. Mechanism: Discusses [CRITERIA 2].
+3. Subject: Involves [CRITERIA 3].
 
+TASK:
+I will provide a list of papers.
+Return a raw JSON list of objects. One object for each paper.
+Format:
+[
+  {"ID": 123, "Included": true, "Reason": "..."},
+  {"ID": 124, "Included": false, "Reason": "..."}
+]
 """
 
 def pre_flight_check(paper):
@@ -150,3 +163,4 @@ for _, row in rejected_df.iterrows():
 pd.DataFrame(report_data).to_csv(args.report, index=False)
 
 print(f"Report saved to '{args.report}'.")
+
