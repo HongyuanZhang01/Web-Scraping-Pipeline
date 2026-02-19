@@ -9,7 +9,7 @@ from datetime import datetime
 KEYWORD = "Uncanny Valley"
 SEARCH_QUERY = '(("uncanny valley" AND "mind") OR ("Alexa" AND "dehumanization") OR ("artificial intelligence" AND "eeriness"))'
 MAX_RESULTS = 5000
-EMAIL = "joseph.hyzhang@gmail.com"
+EMAIL = "yourgmail@gmail.com"
 API_KEY = "YOUR_GEMINI_API_KEY_HERE"
 
 # ==========================================
@@ -128,3 +128,4 @@ if __name__ == "__main__":
 
 
     log_and_print(f"\n🎉 PIPELINE FINISHED COMPLETELY! Data saved in {RUN_DIR}/")
+
