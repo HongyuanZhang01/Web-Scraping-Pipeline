@@ -13,7 +13,7 @@ An end-to-end, fully automated Python pipeline for conducting systematic literat
 * **Comprehensive Reporting:** Generates human-readable CSV reports detailing API rate limits, HTTP download errors (403, 404), and exact relevancy rejection reasons.
 
 ## Prerequisites
-You will need Python 3.9+ and a Google Gemini API Key.
+Python 3.9+ and a valid Google Gemini API Key. Gemini Pro is recommended for large scraping sizes.
 
 Install the required packages:
 ```bash
@@ -24,16 +24,11 @@ Before running the pipeline, you must configure your specific research parameter
 
 1. master_file.py
 Open the orchestrator file and fill out the MASTER CONFIGURATION section at the top:
-
-KEYWORD: The name of your run (e.g., "Machine_Learning_Bias").
-
-SEARCH_QUERY: Your boolean search string for OpenAlex.
-
-MAX_RESULTS: The maximum number of papers to fetch.
-
-EMAIL: Required by OpenAlex and Unpaywall for polite API usage.
-
-API_KEY: Your Google Gemini API Key.
+* **KEYWORD:** The name of your run (e.g., "Machine_Learning_Bias").
+* **SEARCH_QUERY:** Your boolean search string for OpenAlex.
+* **MAX_RESULTS:** The maximum number of papers to fetch.
+* **EMAIL:** Required by OpenAlex and Unpaywall for polite API usage.
+* **API_KEY:** Your Google Gemini API Key.
 
 2. step2_relevancy_filter.py
 Locate the SYSTEM_PROMPT variable and update the INCLUSION CRITERIA to match the specific rules you want the AI to use when screening abstracts.
@@ -44,14 +39,14 @@ Locate the ANALYSIS_PROMPT variable and update the instructions. Tell the AI exa
 ## Usage
 Activate your virtual environment and run the master orchestrator:
 
-Bash
+```bash
 python master_file.py
-
+```
 ## Output Architecture
-The script will generate a dynamically named folder (e.g., Run_ProjectName_20260219_1200) containing:
+The script will generate a dynamically named folder (e.g., Run_ProjectName_[year][mo][day]_[time]) containing:
 
-📁 step_result_csvs/ - The machine-readable handoff files between steps. The final, completed dataset is 5_final_analysis.csv.
+*📁 step_result_csvs/ - The machine-used handoff files between steps. The final result of articles' dataset is titled *5_final_analysis.csv*.
 
-📁 Progress_Report/ - Human-readable CSVs detailing exactly what happened at each step, including failure logs and summary statistics.
+*📁 Progress_Report/ - The CSVs files detailing what happened at each step, including failure logs and summary statistics. This leaves a paper trail easy to use to find roots of discrepancies.
 
-📁 Downloaded_PDFs/ - The raw, full-text PDF files successfully retrieved from the web.
+*📁 Downloaded_PDFs/ - The full-text PDF files successfully retrieved from the web.
