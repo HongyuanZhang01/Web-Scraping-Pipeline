@@ -35,13 +35,11 @@ MODEL_NAME = "gemini-2.0-flash"
 MAX_WORKERS = 10  
 
 ANALYSIS_PROMPT = """
-Analyze this PDF research paper. The goal is to filter out all papers which do not draw on experimental studies.
-1. Identify the overall research methodology. Choose ONE from: [Experimental, Systematic Review, Survey, Qualitative, Other].
-2. Provide a brief "Reason" (max 1 sentence).
 
-Return the result as a valid JSON object with these keys:
-- "methodology": "The chosen category",
-- "reason": "The explanation"
+This prompt will be used to determine what you want extracted from the full-text PDFs. 
+Currently, a column titled "Methodology" will be generated in step 4. 
+You may change this in step 4 if you wish.
+
 """
 
 # ==========================================
@@ -239,4 +237,5 @@ def run_fast_pipeline():
 
 
 if __name__ == "__main__":
+
     run_fast_pipeline()
