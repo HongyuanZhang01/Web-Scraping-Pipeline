@@ -18,7 +18,7 @@ You will need Python 3.9+ and a Google Gemini API Key.
 Install the required packages:
 ```bash
 pip install pyalex pandas requests thefuzz google-genai
-
+```
 ## Configuration
 Before running the pipeline, you must configure your specific research parameters.
 
