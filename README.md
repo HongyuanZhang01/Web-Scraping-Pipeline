@@ -23,11 +23,11 @@ Before running the pipeline, you must configure your specific research parameter
 
 1. **master_file.py**
   * Open the orchestrator file and fill out the MASTER CONFIGURATION section at the top:
-* **KEYWORD:** The name of your run (e.g., "Machine_Learning_Bias").
-* **SEARCH_QUERY:** Your boolean search string for OpenAlex.
-* **MAX_RESULTS:** The maximum number of papers to fetch.
-* **EMAIL:** Required by OpenAlex and Unpaywall for polite API usage.
-* **API_KEY:** Your Google Gemini API Key.
+   * **KEYWORD:** The name of your run (e.g., "Machine_Learning_Bias").
+   * **SEARCH_QUERY:** Your boolean search string for OpenAlex.
+   * **MAX_RESULTS:** The maximum number of papers to fetch.
+   * **EMAIL:** Required by OpenAlex and Unpaywall for polite API usage.
+   * **API_KEY:** Your Google Gemini API Key.
 
 2. **step2_relevancy_filter.py**
   * Locate the *SYSTEM_PROMPT* variable and update the INCLUSION CRITERIA to match the specific rules you want the AI to use when screening abstracts.
